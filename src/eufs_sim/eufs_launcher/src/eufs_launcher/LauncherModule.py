@@ -210,7 +210,7 @@ class EUFSLauncher(Plugin):
         # Scaling done via magically comparing the width to the 'default'
         # 1700 pixels
         rec = QApplication.desktop().screenGeometry()
-        scalar_multiplier = rec.width() / 1700.0
+        scalar_multiplier = int(rec.width() / 1700)
         for widget in self._widget.children():
             if hasattr(widget, "geometry"):
                 geom = widget.geometry()
