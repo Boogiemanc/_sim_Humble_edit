@@ -1,0 +1,10 @@
+.vscode
+log/
+.txt
+build/
+install/
+.gitlab
+.gitlab-ci
+.idea
+cmake-build-debug
+comp_robot_dependencies.txt
