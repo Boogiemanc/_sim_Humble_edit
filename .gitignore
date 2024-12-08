@@ -6,5 +6,6 @@ install/
 .gitlab
 .gitlab-ci
 .idea
+.devcontainer
 cmake-build-debug
 comp_robot_dependencies.txt
