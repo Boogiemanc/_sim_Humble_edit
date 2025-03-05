@@ -210,19 +210,19 @@ class EUFSLauncher(Plugin):
         # Scaling done via magically comparing the width to the 'default'
         # 1700 pixels
         rec = QApplication.desktop().screenGeometry()
-        scalar_multiplier = max(1,int(rec.width() / 1700))
+        scalar_multiplier = rec.width() / 1700.0
         for widget in self._widget.children():
             if hasattr(widget, "geometry"):
                 geom = widget.geometry()
                 if not isinstance(widget, QLabel):
                     new_width = geom.width() * scalar_multiplier
                 else:
-                    new_width = geom.width() * scalar_multiplier + 200
+                    new_width = geom.width() * scalar_multiplier + 200.0
                 widget.setGeometry(
-                    geom.x() * scalar_multiplier,
-                    geom.y() * scalar_multiplier,
-                    new_width,
-                    geom.height() * (scalar_multiplier),
+                  int(geom.x() * scalar_multiplier),
+                   int( geom.y() * scalar_multiplier),
+                    int(new_width),
+                    int(geom.height() * (scalar_multiplier)),
                 )
 
         # If use_gui is false, we jump straight into launching the track
