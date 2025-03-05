@@ -551,7 +551,7 @@ void RaceCarModelPlugin::publishTf() {
     transform_stamped.transform.rotation.y = transform.getRotation().y();
     transform_stamped.transform.rotation.z = transform.getRotation().z();
     transform_stamped.transform.rotation.w = transform.getRotation().w();
-
+// line change from   tf2::convert(transform, transform_stamped.transform); to manually getting the pose of the car 
   _tf_br->sendTransform(transform_stamped);
 }
 
